@@ -1,14 +1,14 @@
-**University of South Carolina**
-**CSCE  350: Data Structures and Algorithms**
+# **University of South Carolina**
+## **CSCE  350: Data Structures and Algorithms**
 SYLLABUS
-**INSTRUCTOR**
+### **INSTRUCTOR**
 Name: Neema Kanapala
 Office:  2219, Bert Storey Innovation Center
 Office Hours:  TR  11 :30 am – 1:00 pm or by appointment
 Email:  neema@cse.sc.edu
 Phone:  (803) 576­
 
-**ACADEMIC BULLETIN DESCRIPTION:**
+### **ACADEMIC BULLETIN DESCRIPTION:**
 
 ```
  Techniques for representing and processing information, including the use of lists, trees, and
@@ -16,21 +16,21 @@ graphs
  Analysis of algorithms
  Sorting, searching, and hashing techniques
 ```
-**PREREQUISITES:**
+### **PREREQUISITES:**
 
 ```
  CSCE 
  MATH 174 or MATH 374 or MATH 
  Ability to write programs using C/C++
 ```
-**CLASS MEETING TIMES:**
+### **CLASS MEETING TIMES:**
 
 ```
 Session Days Time Location
 Lecture MW 2:20 pm – 3:35 pm HP 
 ```
 
-## COURSE OVERVIEW:
+### COURSE OVERVIEW:
 
 ```
  The course will be delivered to the students face­to­face only.
@@ -48,7 +48,7 @@ discussion boards and other in­class participation activities.
 of the students. Please allow a response time of at least 1 business day to your email. Make sure to
 include “CSCE 350” as the subject line in all your email communication.
 ```
-## COURSE OBJECTIVES
+### COURSE OBJECTIVES
 
 1. Describe formal analysis measures.
 2. Describe the relevance of abstraction to problem solving.
@@ -60,23 +60,23 @@ include “CSCE 350” as the subject line in all your email communic
 
 6. Use appropriate data structures
 
-## TEXTBOOK:
+### TEXTBOOK:
 
 ```
  Anany V. Levitin,  Introduction to the Design and Analysis of Algorithms (3rd  Edition), Addison
 Wesley, Boston, MA, 2012, ISBN­13: 9780132316811  (Required)
 All readings/materials comply with copyright/fair use policies.
 ```
-**GRADES:**
+### **GRADES:**
 
-A   (90­100%)
-B+ (87­89%)
-B   (80­86%)
-C+ (77­79%)
-C   (70­76%)
-D+ (67­69%)
-D   (60­66%)
-F    (0­59%)
+-   A   (90-100%)
+-   B+  (87-89%)
+-   B   (80-86%)
+-   C+  (77-79%)
+-   C   (70-76%)
+-   D+  (67-69%)
+-   D   (60-66%)
+-   F   (0-59%)
 
 **GRADE DISTRIBUTION:**
 
