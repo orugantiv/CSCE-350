@@ -20,10 +20,12 @@ int main(int argc, char *argv[]) {
   for (int i = 0; i < dataList.size(); ++i) std::cout << dataList[i] << ' ';
 
   sort.doSort(0, dataList.size() - 1);
-
   dataList = sort.getDataVector();
-  std::cout << '\n' << std::endl;
+  file.setDataVector(dataList);
+  file.writeFile(argv[2]);
 
+
+  std::cout << '\n' << std::endl;
   for (int i = 0; i < dataList.size(); ++i) std::cout << dataList[i] << ' ';
   return 0;
 }

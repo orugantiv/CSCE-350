@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/src"
+                "${workspaceFolder}/src",
+                "/home/anirudh/Documents/CSCE-350/Assignments"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

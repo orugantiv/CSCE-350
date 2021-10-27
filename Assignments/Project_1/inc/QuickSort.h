@@ -25,6 +25,14 @@ class FileReadWrite {
     while (dataFile >> temp) _dataList.push_back(std::stof(temp));
     return _dataList;
   }
+  void writeFile(std::string path) {
+    std::ofstream dataOutputFile;
+    dataOutputFile.open(path.c_str());
+    assert(dataOutputFile.is_open() && "***Could Not Open The File***");
+    for (std::vector<float>::size_type i = 0; i < _dataList.size(); ++i)
+      dataOutputFile << _dataList[i]
+                     << ((i != (_dataList.size() - 1)) ? " " : "");
+  }
 
   void setDataVector(std::vector<float> newDataVector) {
     _dataList = newDataVector;
