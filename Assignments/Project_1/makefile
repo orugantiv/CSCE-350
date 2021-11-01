@@ -17,10 +17,10 @@ test-style : src/* inc/*
 	cpplint --root=. $^
 
 
-Oruganti_V.N.Anirudh_QuickSort: bin/QuickSortAlgorithm.o
+Oruganti_V.N.Anirudh_QuickSort: bin/QuickSort.o
 	$(link) $@  $^
 
-bin/QuickSortAlgorithm.o : src/QuickSortAlgorithm.cpp inc/QuickSort.h
+bin/QuickSort.o : src/QuickSort.cpp inc/QuickSort.h
 	$(compile) $< -o $@
 
 clean:
