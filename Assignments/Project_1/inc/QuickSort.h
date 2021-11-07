@@ -50,7 +50,7 @@ class QuickSort {
   void swap(int leftIndex, int rightIndex);
 
   void doSort(int firstIndex, int lastIndex) {
-    if ( firstIndex < lastIndex ){
+    if ( firstIndex < lastIndex){
       // if(_dataList[firstIndex]>_dataList[middleIndex] && _dataList[lastIndex]>_dataList[middleIndex] )
       //   pivot = middleIndex;
       // else if(_dataList[firstIndex]<_dataList[middleIndex] && _dataList[firstIndex]<_dataList[lastIndex] )
@@ -67,31 +67,35 @@ class QuickSort {
 
   int median_of_three(int firstIndex,int middleIndex,int lastIndex){
     
-    return  (_dataList[firstIndex]<_dataList[middleIndex] && _dataList[firstIndex]<_dataList[lastIndex])?firstIndex:
-            (_dataList[middleIndex]<_dataList[firstIndex] && _dataList[middleIndex]< _dataList[lastIndex])?middleIndex:lastIndex;
+    return  ((_dataList[firstIndex]<=_dataList[middleIndex] && _dataList[firstIndex]>= _dataList[lastIndex])||
+             (_dataList[firstIndex]>=_dataList[middleIndex] && _dataList[firstIndex]<=_dataList[lastIndex]))?firstIndex:
+            ((_dataList[middleIndex]<=_dataList[firstIndex] && _dataList[middleIndex]>=_dataList[lastIndex])||
+            (_dataList[middleIndex]>=_dataList[firstIndex] && _dataList[middleIndex]<=_dataList[lastIndex]))?middleIndex:lastIndex;
             
   }
 
   int doPartition(int firstIndex, int lastIndex) {
+    int middleIndex = (lastIndex+firstIndex)/2;
+    int pivotIndex = median_of_three(firstIndex,middleIndex,lastIndex);
+    if(pivotIndex!=firstIndex)
+        swap(pivotIndex,firstIndex);
+    float pivot =  _dataList[firstIndex];
+
+
     int i = firstIndex;
     int j = lastIndex+1;
-    int middleIndex = (firstIndex+lastIndex)/2;
-    int pivotIndex = median_of_three(firstIndex,middleIndex,lastIndex);
-    int pivot =  _dataList[pivotIndex];
-
-
         while (true)
     {
-        while ((_dataList[++i] <= pivotIndex))
+        while (!(_dataList[++i] >= pivot))
             ;
-        while ((_dataList[--j] >= pivotIndex))
+        while (!(_dataList[--j] <= pivot))
             ;
         if (i >= j)
             break;
             swap(i, j);
 
     }
-  swap(pivotIndex,j);
+    swap(firstIndex,j);
      return j;
 
   }
