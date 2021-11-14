@@ -49,54 +49,50 @@ class QuickSort {
 
   void swap(int leftIndex, int rightIndex);
 
-  void doSort(int firstIndex, int lastIndex) {
-    if ( firstIndex < lastIndex){
-      // if(_dataList[firstIndex]>_dataList[middleIndex] && _dataList[lastIndex]>_dataList[middleIndex] )
-      //   pivot = middleIndex;
-      // else if(_dataList[firstIndex]<_dataList[middleIndex] && _dataList[firstIndex]<_dataList[lastIndex] )
-      //   pivot = firstIndex;
-      // else pivot = lastIndex;
-
-      // std::cout<<pivot<<std::endl;
-      // swap(middleIndex, lastIndex - 1);
-      int s = doPartition(firstIndex, lastIndex);
-      doSort(firstIndex, (s - 1));
-      doSort((s + 1), lastIndex);
-    }
-  }
-
   int median_of_three(int firstIndex,int middleIndex,int lastIndex){
     
-    return  ((_dataList[firstIndex]<=_dataList[middleIndex] && _dataList[firstIndex]>= _dataList[lastIndex])||
+  return  ((_dataList[firstIndex]<=_dataList[middleIndex] && _dataList[firstIndex]>= _dataList[lastIndex])||
              (_dataList[firstIndex]>=_dataList[middleIndex] && _dataList[firstIndex]<=_dataList[lastIndex]))?firstIndex:
             ((_dataList[middleIndex]<=_dataList[firstIndex] && _dataList[middleIndex]>=_dataList[lastIndex])||
-            (_dataList[middleIndex]>=_dataList[firstIndex] && _dataList[middleIndex]<=_dataList[lastIndex]))?middleIndex:lastIndex;
-            
+            (_dataList[middleIndex]>=_dataList[firstIndex] && _dataList[middleIndex]<=_dataList[lastIndex]))?middleIndex:lastIndex; 
   }
 
-  int doPartition(int firstIndex, int lastIndex) {
-    int middleIndex = (lastIndex+firstIndex)/2;
-    int pivotIndex = median_of_three(firstIndex,middleIndex,lastIndex);
-    if(pivotIndex!=firstIndex)
-        swap(pivotIndex,firstIndex);
-    float pivot =  _dataList[firstIndex];
+  void doSort(int firstIndex, int lastIndex) {
+    if ( firstIndex < lastIndex  ){
+      int s = doPartition(firstIndex, lastIndex);
+      std::cout<< s<<std::endl;
+       doSort(firstIndex, (s - 1));
+       doSort((s + 1), lastIndex);
+    }
+    else return;
+  }
 
+
+  int doPartition(int firstIndex, int lastIndex) {
+    int middleIndex = ((lastIndex+firstIndex)%2 != 0)? (lastIndex+firstIndex)/2: (lastIndex+firstIndex)/2;
+    int pivotIndex = median_of_three(firstIndex,middleIndex,lastIndex);
+    std::cout<<"First: "<<firstIndex<<" Middle: "<<middleIndex<<" Last: "<<lastIndex<< " PivotIndex: "<<pivotIndex<<std::endl;
+   
+    // swap(pivotIndex,firstIndex);
+    // pivotIndex = firstIndex;
+   
+    float pivot =  _dataList[pivotIndex];
 
     int i = firstIndex;
-    int j = lastIndex+1;
-        while (true)
-    {
-        while (!(_dataList[++i] >= pivot))
-            ;
-        while (!(_dataList[--j] <= pivot))
-            ;
+    int j = lastIndex;
+
+    while (1){
+        while ((_dataList[i] < pivot || i == pivotIndex ) && (i+1)<= lastIndex && (i+1) >= firstIndex )++i;
+        while ((_dataList[j] > pivot || j == pivotIndex ) && (j-1)>= firstIndex && (j-1) <= lastIndex )--j;
         if (i >= j)
             break;
-            swap(i, j);
-
+        swap(i, j);
+        ++i; --j;
     }
-    swap(firstIndex,j);
-     return j;
+
+
+   swap(pivotIndex,j);
+  return j;
 
   }
 
