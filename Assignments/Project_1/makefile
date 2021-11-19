@@ -17,11 +17,17 @@ test-style : src/* inc/*
 	cpplint --root=. $^
 
 
+
 Oruganti_V.N.Anirudh_QuickSort: bin/QuickSort.o
 	$(link) $@  $^
 
-bin/QuickSort.o : src/QuickSort.cpp inc/QuickSort.h
+bin/QuickSort.o : src/QuickSortMain.cpp src/QuickSort.cpp inc/QuickSort.h bin/FileReadWrite.o
 	$(compile) $< -o $@
+
+bin/FileReadWrite.o: src/FileReadWrite.cpp inc/FileReadWrite.h 
+	$(compile) $< -o $@
+
+
 
 clean:
 	rm -f bin/* Oruganti_V.N.Anirudh_QuickSort

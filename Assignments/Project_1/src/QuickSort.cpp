@@ -15,25 +15,39 @@
     _dataList[leftIndex] = _dataList[rightIndex];
     _dataList[rightIndex] = temp;
   }
+  int QuickSort::median_of_three(int firstIndex,int middleIndex,int lastIndex){
+    
+  return  ((_dataList[firstIndex]<=_dataList[middleIndex] && _dataList[firstIndex]>= _dataList[lastIndex])||
+             (_dataList[firstIndex]>=_dataList[middleIndex] && _dataList[firstIndex]<=_dataList[lastIndex]))?firstIndex:
+            ((_dataList[middleIndex]<=_dataList[firstIndex] && _dataList[middleIndex]>=_dataList[lastIndex])||
+            (_dataList[middleIndex]>=_dataList[firstIndex] && _dataList[middleIndex]<=_dataList[lastIndex]))?middleIndex:lastIndex; 
+  }
+  void QuickSort::doSort(int firstIndex, int lastIndex) {
+    if ( firstIndex < lastIndex  ){
+      int s = doPartition(firstIndex, lastIndex);
+       doSort(firstIndex, (s - 1));
+       doSort((s + 1), lastIndex);
+    }
+  }
+  int QuickSort::doPartition(int firstIndex, int lastIndex) {
+    int middleIndex = (lastIndex+firstIndex)/2;
+    int pivotIndex = median_of_three(firstIndex,middleIndex,lastIndex);   
+    swap(pivotIndex,firstIndex);
+    pivotIndex = firstIndex;
+    float pivot =  _dataList[pivotIndex];
+    int i = firstIndex;
+    int j = lastIndex;
 
-int main(int argc, char *argv[]) {
-  // Makes sure input is length is 3.
-  assert(argc == 3 && "Incorrect Number of Arguments ");
-  FileReadWrite file;
-  std::vector<float> dataList = file.readFile(argv[1]);
-  QuickSort sort(dataList);
-  for (int i = 0; i < dataList.size(); ++i) std::cout << dataList[i] << ' ';
+    while (1){
+        while ((_dataList[i] < pivot || i == pivotIndex ) && (i+1)<= lastIndex && (i+1) >= firstIndex )++i;
+        while ((_dataList[j] > pivot || j == pivotIndex ) && (j-1)>= firstIndex && (j-1) <= lastIndex )--j;
+        if (i >= j) break; swap(i, j);
+        ++i; --j;
+    }
 
-  sort.doSort(0, dataList.size() - 1);
+   swap(pivotIndex,j);
+  return j;
 
-  dataList = sort.getDataVector();
-  file.setDataVector(dataList);
-
-  file.writeFile(argv[2]);
+  }
 
 
-  std::cout << '\n' << std::endl;
-  for (int i = 0; i < dataList.size(); ++i) std::cout << dataList[i] << ' ';
-
-  return 0;
-}

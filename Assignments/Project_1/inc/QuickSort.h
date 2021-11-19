@@ -8,94 +8,20 @@
 #ifndef INC_QUICKSORT_H_
 #define INC_QUICKSORT_H_
 
-#include <cassert>
-#include <fstream>
-#include <iostream>
-#include <vector>
-
-class FileReadWrite {
- public:
-  // This method read in the input from a given path of file and saves the
-  // values to vector.
-  std::vector<float> readFile(std::string path) {
-    std::string temp;
-    std::fstream dataFile;
-    dataFile.open(path.c_str());
-    assert(dataFile.is_open() && "***Could Not Open The File***");
-    while (dataFile >> temp) _dataList.push_back(std::stof(temp));
-    return _dataList;
-  }
-  void writeFile(std::string path) {
-    std::ofstream dataOutputFile;
-    dataOutputFile.open(path.c_str());
-    assert(dataOutputFile.is_open() && "***Could Not Open The File***");
-    for (std::vector<float>::size_type i = 0; i < _dataList.size(); ++i)
-      dataOutputFile << _dataList[i]
-                     << ((i != (_dataList.size() - 1)) ? " " : "");
-  }
-
-  void setDataVector(std::vector<float> newDataVector) {
-    _dataList = newDataVector;
-  }
-  std::vector<float> getDataVector() { return _dataList; }
-
- private:
-  std::vector<float> _dataList;
-};
-
+#include <vector>  // for vector 
+#include <string>  // for string
+ 
 class QuickSort {
  public:
   QuickSort(std::vector<float> DataVector) { _dataList = DataVector; }
 
   void swap(int leftIndex, int rightIndex);
 
-  int median_of_three(int firstIndex,int middleIndex,int lastIndex){
-    
-  return  ((_dataList[firstIndex]<=_dataList[middleIndex] && _dataList[firstIndex]>= _dataList[lastIndex])||
-             (_dataList[firstIndex]>=_dataList[middleIndex] && _dataList[firstIndex]<=_dataList[lastIndex]))?firstIndex:
-            ((_dataList[middleIndex]<=_dataList[firstIndex] && _dataList[middleIndex]>=_dataList[lastIndex])||
-            (_dataList[middleIndex]>=_dataList[firstIndex] && _dataList[middleIndex]<=_dataList[lastIndex]))?middleIndex:lastIndex; 
-  }
+  int median_of_three(int firstIndex,int middleIndex,int lastIndex);
 
-  void doSort(int firstIndex, int lastIndex) {
-    if ( firstIndex < lastIndex  ){
-      int s = doPartition(firstIndex, lastIndex);
-      std::cout<< s<<std::endl;
-       doSort(firstIndex, (s - 1));
-       doSort((s + 1), lastIndex);
-    }
-    else return;
-  }
+  void doSort(int firstIndex, int lastIndex);
 
-
-  int doPartition(int firstIndex, int lastIndex) {
-    int middleIndex = ((lastIndex+firstIndex)%2 != 0)? (lastIndex+firstIndex)/2: (lastIndex+firstIndex)/2;
-    int pivotIndex = median_of_three(firstIndex,middleIndex,lastIndex);
-    std::cout<<"First: "<<firstIndex<<" Middle: "<<middleIndex<<" Last: "<<lastIndex<< " PivotIndex: "<<pivotIndex<<std::endl;
-   
-    // swap(pivotIndex,firstIndex);
-    // pivotIndex = firstIndex;
-   
-    float pivot =  _dataList[pivotIndex];
-
-    int i = firstIndex;
-    int j = lastIndex;
-
-    while (1){
-        while ((_dataList[i] < pivot || i == pivotIndex ) && (i+1)<= lastIndex && (i+1) >= firstIndex )++i;
-        while ((_dataList[j] > pivot || j == pivotIndex ) && (j-1)>= firstIndex && (j-1) <= lastIndex )--j;
-        if (i >= j)
-            break;
-        swap(i, j);
-        ++i; --j;
-    }
-
-
-   swap(pivotIndex,j);
-  return j;
-
-  }
-
+  int doPartition(int firstIndex, int lastIndex);
   // returns a vector that contains list of floats
   std::vector<float> getDataVector() { return _dataList; }
 
