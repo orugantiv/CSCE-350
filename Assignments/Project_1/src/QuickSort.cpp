@@ -41,7 +41,7 @@
     while (1){
         while ((_dataList[i] < pivot || i == pivotIndex ) && (i+1)<= lastIndex && (i+1) >= firstIndex )++i;
         while ((_dataList[j] > pivot || j == pivotIndex ) && (j-1)>= firstIndex && (j-1) <= lastIndex )--j;
-        if (i >= j) break; swap(i, j);
+        if (i >= j) {break;} swap(i, j);
         ++i; --j;
     }
 

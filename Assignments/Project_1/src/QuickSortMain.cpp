@@ -1,5 +1,6 @@
 #include <Project_1/src/QuickSort.cpp>
 #include <Project_1/src/FileReadWrite.cpp>
+#include <iostream>
 int main(int argc, char *argv[]) {
   // Makes sure input is length is 3.
 
@@ -7,14 +8,13 @@ int main(int argc, char *argv[]) {
   FileReadWrite file;
   std::vector<float> dataList = file.readFile(argv[1]);
   QuickSort sort(dataList);
+  auto start = std::chrono::high_resolution_clock::now();
   sort.doSort(0, dataList.size() - 1);
+  auto stop = std::chrono::high_resolution_clock::now();
+  float duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count();
   dataList = sort.getDataVector();
   file.setDataVector(dataList);
-  file.writeFile(argv[2]);
-
-
-//   std::cout << '\n' << std::endl;
-//   for (int i = 0; i < dataList.size(); ++i) std::cout << dataList[i] << ' ';
+  file.writeFile(argv[2],duration/1000);
 
   return 0;
 }

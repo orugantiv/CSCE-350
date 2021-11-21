@@ -19,7 +19,9 @@ class FileReadWrite {
   // This method read in the input from a given path of file and saves the
   // values to vector.
   std::vector<float> readFile(std::string path);
-  void writeFile(std::string path);
+  void writeFile( std::string path, float executionTime = -999);
+  void writeFile( std::vector<std::vector<float>> executionTime, 
+                  std::vector<std::vector<float>> averageExecutionTime, char**& argv);
   void setDataVector(std::vector<float> newDataVector);
   std::vector<float> getDataVector();
 

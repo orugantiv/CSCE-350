@@ -8,8 +8,10 @@
 #ifndef INC_QUICKSORT_H_
 #define INC_QUICKSORT_H_
 
-#include <vector>  // for vector 
-#include <string>  // for string
+#include <vector>  // For vector 
+#include <string>  // For string
+#include <chrono>  // For time
+
  
 class QuickSort {
  public:
