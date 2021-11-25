@@ -1,2 +1,2 @@
-##CSCE 350: Project
+CSCE 350: Project
 ---
