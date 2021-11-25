@@ -15,6 +15,9 @@ compile = $(cpp) $(flags) -c  # compilation to intermediary .o files
 test-style : src/* inc/*
 	cpplint --root=. $^
 
+Oruganti_V.N.Anirudh_plotAverageExecutionTime: src/PlotAvgExecutionTime.py
+	python3	 $^
+
 Oruganti_V.N.Anirudh_EmpiricalAnalysis: bin/EmpiricalAnalysis.o
 	$(link) $@  $^
 
