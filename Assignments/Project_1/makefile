@@ -12,20 +12,14 @@ link = $(cpp) $(flags) -o  # final linked build to binary executable
 compile = $(cpp) $(flags) -c  # compilation to intermediary .o files
 
 
-test-style : src/* inc/*
-	cpplint --root=. $^
-
-Oruganti_V.N.Anirudh_plotAverageExecutionTime: src/Oruganti_V.N.Anirudh_PlotAvgExecutionTime.py
-	python3	 $^
-
 Oruganti_V.N.Anirudh_EmpiricalAnalysis: bin/Oruganti_V.N.Anirudh_EmpiricalAnalysis.o
-	$(link) $@  $^
-
-Oruganti_V.N.Anirudh_QuickSort: bin/Oruganti_V.N.Anirudh_QuickSortMain.o
 	$(link) $@  $^
 
 bin/Oruganti_V.N.Anirudh_EmpiricalAnalysis.o: src/Oruganti_V.N.Anirudh_EmpiricalAnalysis.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o bin/Oruganti_V.N.Anirudh_FileReadWrite.o
 	$(compile) $< -o $@
+
+Oruganti_V.N.Anirudh_QuickSort: bin/Oruganti_V.N.Anirudh_QuickSortMain.o
+	$(link) $@  $^
 
 bin/Oruganti_V.N.Anirudh_QuickSortMain.o: src/Oruganti_V.N.Anirudh_QuickSortMain.cpp bin/Oruganti_V.N.Anirudh_FileReadWrite.o bin/Oruganti_V.N.Anirudh_QuickSort.o
 	$(compile) $< -o $@
@@ -39,7 +33,10 @@ bin/Oruganti_V.N.Anirudh_FileReadWrite.o: src/Oruganti_V.N.Anirudh_FileReadWrite
 bin/Oruganti_V.N.Anirudh_NumberGenrator.o: src/Oruganti_V.N.Anirudh_NumberGenrator.cpp inc/Oruganti_V.N.Anirudh_NumberGenrator.h 
 	$(compile) $< -o $@
 
-clean:
+Oruganti_V.N.Anirudh_plotAverageExecutionTime: src/Oruganti_V.N.Anirudh_PlotAvgExecutionTime.py
+	python3	 $^
+
+cleanBinaries:
 	rm -f bin/* Oruganti_V.N.Anirudh_QuickSort Oruganti_V.N.Anirudh_EmpiricalAnalysis
 
 cleanAll:

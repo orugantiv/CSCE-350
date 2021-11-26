@@ -1,16 +1,23 @@
+'''
+ * Programmer Name: V.N. Anriudh Oruganti
+ * Class: CSCE 350
+ * Application: Read and Writes Floats to Files from and to Vector
+ * Excution:
+ * Copyright 2021 V.N. Anirudh Oruganti
+ '''
 import numpy as np
 import matplotlib.pyplot as plt
 
-file = open('Oruganti_V.N.Anirudh_averageExecutionTime.txt','r')
-fig,ax=plt.subplots()
+file = open('Oruganti_V.N.Anirudh_averageExecutionTime.txt', 'r')
+fig, ax = plt.subplots()
 labels = file.readline()
 labels = labels.split('\t')
 dataInput = []
 dataTime = []
 while(1):
-    line = file.readline().replace("\n",'')
+    line = file.readline().replace("\n", '')
     if line == '':
-        break;
+        break
     else:
         line = line.split('\t')
         dataInput.append(float(line[0]))

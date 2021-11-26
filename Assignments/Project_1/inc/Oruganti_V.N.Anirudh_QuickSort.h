@@ -8,18 +8,17 @@
 #ifndef INC_ORUGANTI_V_N_ANIRUDH_QUICKSORT_H_
 #define INC_ORUGANTI_V_N_ANIRUDH_QUICKSORT_H_
 
-#include <vector>  // For vector 
-#include <string>  // For string
 #include <chrono>  // For time
+#include <string>  // For string
+#include <vector>  // For vector
 
- 
 class QuickSort {
  public:
   QuickSort(std::vector<float> DataVector) { _dataList = DataVector; }
 
   void swap(int leftIndex, int rightIndex);
 
-  int median_of_three(int firstIndex,int middleIndex,int lastIndex);
+  int median_of_three(int firstIndex, int middleIndex, int lastIndex);
 
   void doSort(int firstIndex, int lastIndex);
 
