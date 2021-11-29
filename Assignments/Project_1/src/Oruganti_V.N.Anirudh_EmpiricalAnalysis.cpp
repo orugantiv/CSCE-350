@@ -9,7 +9,6 @@
 #include <Project_1/src/Oruganti_V.N.Anirudh_FileReadWrite.cpp>
 #include <Project_1/src/Oruganti_V.N.Anirudh_NumberGenrator.cpp>
 #include <Project_1/src/Oruganti_V.N.Anirudh_QuickSort.cpp>
-#include <filesystem>
 #include <iostream>
 int main(int argc, char* argv[]) {
   // Makes sure input is length is grater than 2.
@@ -20,17 +19,8 @@ int main(int argc, char* argv[]) {
   averageExecutionTime.resize(argc, std::vector<float>(argc, 0));
 
   FileReadWrite file;
-  // Deletes All existing files in both FloatDataValues/InputData/ &&
-  // FloatDataValues/OutputData/ Referance:
-  // https://en.cppreference.com/w/cpp/filesystem/directory_iterator
-  for (auto FilePath :
-       std::filesystem::directory_iterator("FloatDataValues/InputData/")) {
-    std::filesystem::remove_all(FilePath);
-  }
-  for (auto FilePath :
-       std::filesystem::directory_iterator("FloatDataValues/OutputData/")) {
-    std::filesystem::remove_all(FilePath);
-  }
+  // Delets Existing Data in the following folders 
+  system("rm -rf FloatDataValues/InputData/* FloatDataValues/OutputData/*");
 
   for (int i = 1; i < argc; ++i) {
     std::string path = "FloatDataValues/";
