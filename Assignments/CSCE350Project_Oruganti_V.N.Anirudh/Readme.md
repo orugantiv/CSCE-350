@@ -1,5 +1,4 @@
 # CSCE 350: V. N. Anirudh Oruganti, Project 1 
----
 
 ## Requirements 
 
