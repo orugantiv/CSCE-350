@@ -3,8 +3,8 @@
 
 ## Required Dependencys
 
-> C++: g++ compiler <br />
-> Python for Graphing: Numpy and Matplotlib <br />
+- C++: g++ compiler <br />
+- Python for Graphing: Numpy and Matplotlib <br />
 
 
 ## The Following Folders are Requried to Compile the Project inside Project Folder
@@ -14,7 +14,9 @@
 > 'FloatDataValues/OutputData' <br />
 
 
-## About File Generation
+## About The Project
+
+### File Generation
 
 - Genereated input files are stored in 'FloatDataValues/InputData' dir with naming format of 'input_InputSize_nthFilein100'. <br />
 For example 'input_10_57', denotes for input file with 10 Input size and 57th file out of 100. <br />
