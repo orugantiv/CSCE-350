@@ -32,7 +32,7 @@ For example 'output_10_57', denotes for output file with 10 Input size and 57th 
 > 
 
 ### File Generation
-> To use File Generation: Uncomment following lines in the make file: <br />
+- To use File Generation: Uncomment following lines in the make file: <br />
 >
 	 Line 15: Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o
 	 Line 16: 	$(link) $@  $^ 
