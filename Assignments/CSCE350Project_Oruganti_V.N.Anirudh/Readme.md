@@ -36,7 +36,7 @@ For example 'output_10_57', denotes for output file with 10 Input size and 57th 
 	 Line 16: 	$(link) $@  $^ <br />
 	 Line 17: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o <br />
 	 Line 18: 	$(compile) $< -o $@`<br />
-> Run `./Oruganti_V.N.Anirudh_InputFileGenerator input_0 input_1 input_(n-1)`: Where "input_(n-1)" is an integer of number generated values and you need have at least one input. <br />
+> Run `./Oruganti_V.N.Anirudh_InputFileGenerator input_0 input_1 input_(n-1)`: Where "input_(n-1)" is an integer of number generated values and you need have at least one input and more if you want. <br />
 > Example: `./Oruganti_V.N.Anirudh_InputFileGenerator 10 100 1000 10000 100000` <br />
 
 ### Cleaning Binarys 
