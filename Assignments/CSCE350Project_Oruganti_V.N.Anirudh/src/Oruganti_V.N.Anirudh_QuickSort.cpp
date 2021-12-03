@@ -2,7 +2,6 @@
  * Programmer Name: V.N. Anriudh Oruganti
  * Class: CSCE 350
  * Application:Perform Quick Sort to a given inputfile and calculates executionTime and writes to given output file path 
- * Excution: 
  * Copyright 2021 V.N. Anirudh Oruganti
  **/
 

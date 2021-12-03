@@ -12,12 +12,10 @@ link = $(cpp) $(flags) -o  # final linked build to binary executable
 compile = $(cpp) $(flags) -c  # compilation to intermediary .o files
 
 
-Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o
-	$(link) $@  $^
-
-
-bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o
-	$(compile) $< -o $@
+# Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o
+# 	$(link) $@  $^
+# bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o
+# 	$(compile) $< -o $@
 
 Oruganti_V.N.Anirudh_QuickSort: bin/Oruganti_V.N.Anirudh_QuickSortMain.o
 	$(link) $@  $^
@@ -41,4 +39,4 @@ cleanBinaries:
 	rm -f bin/* Oruganti_V.N.Anirudh_QuickSort Oruganti_V.N.Anirudh_EmpiricalAnalysis
 
 cleanAll:
-	rm -f bin/* Oruganti_*
+	rm -f bin/* Oruganti_* FloatDataValues/InputData/* FloatDataValues/OutputData/* 
