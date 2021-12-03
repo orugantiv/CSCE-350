@@ -17,7 +17,7 @@
 ## About File Generation
 ---
 > Genereated input files are stored in 'FloatDataValues/InputData' dir with naming format of 'input_InputSize_nthFilein100'. <br />
-For example 'input_10_57', denotes for input file with 10 Input size and 57th file out of 100. ___
+For example 'input_10_57', denotes for input file with 10 Input size and 57th file out of 100. <br />
 > Sorted outfile is stored in 'FloatDataValues/OutputData' dir with naming format of 'output_InputSize_nthFilein100'. <br />
 For example 'output_10_57', denotes for output file with 10 Input size and 57th file out of 100. In the output file, the first line containes sorted values from the input file and the second line containes the execution time in miliseconds it took to sort. <br />
 > File Genration cpp file contains a main method where input files are generaded with random float numbers. Then this class it calls quick sort and gets excution times from quick sort class and records it to two vectors where one vector has excution times for all genrated files. And other has the avg excution time. <br />
@@ -30,13 +30,13 @@ For example 'output_10_57', denotes for output file with 10 Input size and 57th 
 > 
 
 ### File Generation
-> To use File Generation: Uncomment following lines:___
-	`Line 15: Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o ___
-	 Line 16: 	$(link) $@  $^___
-	 Line 17: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o___
-	 Line 18: 	$(compile) $< -o $@`___
-> Run `./Oruganti_V.N.Anirudh_InputFileGenerator input_0 input_1 input_(n-1)': Where "input_(n-1)" is an integer of number generated values and you need have at least one input._`
-> Example: `./Oruganti_V.N.Anirudh_InputFileGenerator 10 100 1000 10000 100000`___
+> To use File Generation: Uncomment following lines:<br />
+	`Line 15: Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o <br />
+	 Line 16: 	$(link) $@  $^ <br />
+	 Line 17: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o <br />
+	 Line 18: 	$(compile) $< -o $@`<br />
+> Run `./Oruganti_V.N.Anirudh_InputFileGenerator input_0 input_1 input_(n-1)`: Where "input_(n-1)" is an integer of number generated values and you need have at least one input. <br />
+> Example: `./Oruganti_V.N.Anirudh_InputFileGenerator 10 100 1000 10000 100000` <br />
 
 ### Cleaning Binarys 
 
