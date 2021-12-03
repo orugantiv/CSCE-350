@@ -32,10 +32,10 @@ For example 'output_10_57', denotes for output file with 10 Input size and 57th 
 ### File Generation
 > To use File Generation: Uncomment following lines: <br />
 >
-	`Line 15: Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o <br />
-	 Line 16: 	$(link) $@  $^ <br />
-	 Line 17: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o <br />
-	 Line 18: 	$(compile) $< -o $@`<br />
+	 Line 15: Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o
+	 Line 16: 	$(link) $@  $^ 
+	 Line 17: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o 
+	 Line 18: 	$(compile) $< -o $@
 > Run `./Oruganti_V.N.Anirudh_InputFileGenerator input_0 input_1 input_(n-1)`: Where "input_(n-1)" is an integer of number generated values and you need have at least one input and more if you want. <br />
 > Example: `./Oruganti_V.N.Anirudh_InputFileGenerator 10 100 1000 10000 100000` <br />
 
