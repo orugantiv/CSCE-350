@@ -31,6 +31,7 @@ For example 'output_10_57', denotes for output file with 10 Input size and 57th 
 
 ### File Generation
 > To use File Generation: Uncomment following lines: <br />
+>
 	`Line 15: Oruganti_V.N.Anirudh_InputFileGenerator: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o <br />
 	 Line 16: 	$(link) $@  $^ <br />
 	 Line 17: bin/Oruganti_V.N.Anirudh_InputFileGenerator.o: src/Oruganti_V.N.Anirudh_InputFileGenerator.cpp  bin/Oruganti_V.N.Anirudh_NumberGenrator.o bin/Oruganti_V.N.Anirudh_QuickSort.o <br />
