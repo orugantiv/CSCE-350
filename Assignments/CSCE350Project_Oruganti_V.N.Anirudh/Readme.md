@@ -28,8 +28,7 @@
 
 ### File Generation
 
-- Genereated input files are stored in 'FloatDataValues/InputData' dir with naming format of 'input_InputSize_nthFilein100'. <br />
-For example 'input_10_57', denotes for input file with 10 Input size and 57th file out of 100. <br />
+- Genereated input files are stored in 'FloatDataValues/InputData' dir with naming format of 'input_InputSize_nthFilein100'. For example 'input_10_57', denotes for input file with 10 Input size and 57th file out of 100.<br />
 - Sorted outfile is stored in 'FloatDataValues/OutputData' dir with naming format of 'output_InputSize_nthFilein100'. <br />
 For example 'output_10_57', denotes for output file with 10 Input size and 57th file out of 100. In the output file, the first line containes sorted values from the input file and the second line containes the execution time in miliseconds it took to sort. <br />
 - File Genration cpp file contains a main method where input files are generaded with random float numbers. Then this class it calls quick sort and gets excution times from quick sort class and records it to two vectors where one vector has excution times for all genrated files. And other has the avg excution time. <br />
@@ -64,9 +63,9 @@ For example 'output_10_57', denotes for output file with 10 Input size and 57th 
 	`$ make Oruganti_V.N.Anirudh_InputFileGenerator` <br />
 	`$ ./Oruganti_V.N.Anirudh_InputFileGenerator 10 100 1000 10000 100000` <br />
 
-### Cleaning Binarys 
+### Cleaning Binaries 
 
-- To clear the binary such as ".o" files and the excutable files the program creats run: `$ make cleanBinaries`.
-- To clear all the files the program creats including files in both input and output directorys run: `$ make cleanAll`.
+- To clear the binary such as ".o" files and the executable files the program creats run: `$ make cleanBinaries`.
+- To clear all the files the program creats including files in both input and output directories run: `$ make cleanAll`.
 
 
